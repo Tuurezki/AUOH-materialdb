@@ -29,8 +29,10 @@ app.get("/api/materials", material_controller.api_get_materials);
 // UPDATE
 
 // DELETE
+app.delete("/api/material/:id", material_controller.api_delete_material);
 
-const database_uri ="mongodb+srv://server:f1IFdTNtzuvzqZQS@cluster0-wfba5.mongodb.net/test?retryWrites=true&w=majority"
+
+const database_uri ="mongodb+srv://server:f1IFdTNtzuvzqZQS@cluster0-wfba5.mongodb.net/materialdb?retryWrites=true&w=majority"
 
 // Mongo db connection
 mongoose.connect(database_uri, {
