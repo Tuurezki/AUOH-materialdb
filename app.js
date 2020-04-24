@@ -16,6 +16,9 @@ app.use( (req, res, next)=>{
     next();
 }); //GET /api/materials
 
+//  GET /index.html
+// --> /public/index.html
+app.use('/',express.static('public'));
 
 // RESTful API
 // CRUD OPERATIONS
@@ -27,6 +30,9 @@ app.post("/api/material", material_controller.api_post_material);
 app.get("/api/materials", material_controller.api_get_materials);
 
 // UPDATE
+// app.patch korvaa vain tietyt kentät
+// app.put korvaa koko tiedon
+app.put("/api/material/:id", material_controller.api_put_material);
 
 // DELETE
 app.delete("/api/material/:id", material_controller.api_delete_material);
